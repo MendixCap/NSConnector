@@ -1,0 +1,45 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ReisMogelijkheid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:byte" name="AantalOverstappen"/>
+        <xs:element type="xs:string" name="GeplandeReisTijd"/>
+        <xs:element type="xs:string" name="ActueleReisTijd"/>
+        <xs:element type="xs:string" name="Optimaal"/>
+        <xs:element type="xs:string" name="GeplandeVertrekTijd"/>
+        <xs:element type="xs:string" name="ActueleVertrekTijd"/>
+        <xs:element type="xs:string" name="GeplandeAankomstTijd"/>
+        <xs:element type="xs:string" name="ActueleAankomstTijd"/>
+        <xs:element type="xs:string" name="Status"/>
+        <xs:element name="ReisDeel" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="Vervoerder"/>
+              <xs:element type="xs:string" name="VervoerType"/>
+              <xs:element type="xs:short" name="RitNummer"/>
+              <xs:element type="xs:string" name="Status"/>
+              <xs:element name="ReisStop" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Naam"/>
+                    <xs:element type="xs:string" name="Tijd"/>
+                    <xs:element name="Spoor" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:byte">
+                            <xs:attribute type="xs:string" name="wijziging" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="reisSoort" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
