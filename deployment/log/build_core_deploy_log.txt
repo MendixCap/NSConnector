@@ -1,0 +1,10 @@
+Buildfile: D:\Users\FBRINKHU\Documents\Mendix\NSConnector-main\deployment\build_core.xml
+
+deploy:
+    [unzip] Expanding: D:\Users\FBRINKHU\Documents\Applications\Mendix\modeler\deployment.mxz into D:\Users\FBRINKHU\Documents\Mendix\NSConnector-main\deployment
+
+BUILD SUCCESSFUL
+Total time: 1 second
+
+
+
